@@ -1,4 +1,3 @@
-
 /* 
 * SPDX-License-Identifier: MIT
 * MIT License
@@ -12,39 +11,20 @@
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include <stdio.h>
+extern char f_switch(char switch_type, char case_type);
 
-//unsigned long TEMP;
-#define TEMP 0xF0000000
-#define BASE (TEMP + 0x80000)
-
-#define SRC1 (BASE + 0x000000F0)
-#define SRC2 (BASE + 0x000000F4)
-#define SRC3 (BASE + 0x000000F8)
-#define SRC4 (BASE + 0x000000Fc)
-#define SRC5 (BASE + 0x00000100)
-#define SRC6 (BASE + 0x00000104)
-#define SRC7 (BASE + 0x00000108)
-#define SRC8 (BASE + 0x0000010C)
-
-#define DEST (TEMP + 0x18F14)
-
-int test()
+int main(int __attribute__((unused)) argc, char** argv)
 {
-	//TEMP = 0xF0000000;
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC3);
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC4);
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC5);
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC6);
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC7);
-	*(volatile unsigned int*)(DEST) = *(volatile unsigned int*)(SRC8);
-	return 0;
+	unsigned char switch_type;
+	unsigned char case_type;
+  
+	switch_type = (char)*argv[0];
+	case_type = (char)*argv[1];
+  	f_switch(switch_type, case_type);
 }
 
 
-int main(int argc, char** argv)
+void _start(int argc, char** argv)
 {
-	test();
+	main(argc, argv);
 }
-
-

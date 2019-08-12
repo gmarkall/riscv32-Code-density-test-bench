@@ -11,7 +11,7 @@
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "bad_inline.h"
+#include "inline.h"
 
 
 unsigned long G_MyGlobalArr[5];
@@ -94,8 +94,7 @@ int main(int argc, char** argv)
 	unsigned char argChar1 = (unsigned int)argv[0] + 10;
 	unsigned char argChar2 = (unsigned int)argv[1] + 10;
 	unsigned long argInt1   = (unsigned int)argv[2] + 20;
-	unsigned long argInt2   = (unsigned int)argv[3] + 30;
-	unsigned long i;
+	int i;
 	unsigned long *arr = (unsigned long *)(unsigned long)(void*)(0xF000A000);
 
   //S_FA_RESET_AREA * resetArea_p = (S_FA_RESET_AREA *)(void *)M_RAM_FIXED_ADDRESS(0xF000F000);

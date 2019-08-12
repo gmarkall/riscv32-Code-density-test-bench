@@ -11,12 +11,12 @@
 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-int f_get_zero(const int FirstArg, int SecondArg)
+int f_get_zero(const int __attribute__((unused)) FirstArg, int __attribute__((unused)) SecondArg)
 {
   return 0;
 }
 
-int f_get_one(const int FirstArg, int SecondArg)
+int f_get_one(const int __attribute((unused)) FirstArg, int __attribute__((unused)) SecondArg)
 {
   return 1;
 }

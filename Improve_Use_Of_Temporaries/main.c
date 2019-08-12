@@ -27,7 +27,7 @@ signed int f_get_number(const int FirstArg, int SecondArg)
   return(f_get_one(FirstArg, SecondArg));
 }
 
-int main(int argc, char** argv)
+int main(int __attribute__((unused)) argc, char** argv)
 {
 	int arg1;
 	int arg2;

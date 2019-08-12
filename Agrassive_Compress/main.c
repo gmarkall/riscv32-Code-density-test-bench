@@ -25,7 +25,7 @@ typedef enum TAG_E_0
    E_0_V_3,
    E_0_V_4,
    E_0_V_5,
-   E_0_V_LAST = 0xFFFFFFFF
+   E_0_V_LAST = 0x7FFFFFFF
 } E_0;
 
 typedef struct TAG_S_ST_1
@@ -145,7 +145,7 @@ void helper_fumc_4(S_ST_0* p_st_0)
    *((unsigned int*)0x8000002A) = loc_2;
 }
 
-void main(int argc, char* argv[])
+int main(int __attribute__((unused)) argc, char* argv[])
 {
    func_code_density((S_ST_0*)argv[0]);
    helper_fumc_1((S_ST_0*)argv[1]);

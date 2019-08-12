@@ -32,7 +32,7 @@ void foo(unsigned int val1, unsigned int val2, unsigned char index)
   bar(val1, val2, index);
 }
 
-void main(void)
+int main(void)
 {
   unsigned int idx;
 

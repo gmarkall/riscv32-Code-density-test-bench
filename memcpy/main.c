@@ -59,8 +59,13 @@ int  my_memcpy(S_StructA* params_p)
 }
 
 
-int main(int argc, char* argv[])
+int main(void)
 {
    S_StructA params_p;
    return my_memcpy(&params_p);
+}
+
+void _start(void)
+{
+  main();
 }

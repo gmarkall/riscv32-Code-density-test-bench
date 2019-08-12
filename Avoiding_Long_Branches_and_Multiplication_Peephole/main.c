@@ -76,7 +76,7 @@ unsigned char foo(const ST_1* st_1_p)
   return ZERO;
 }
 
-void main(void)
+int main(void)
 {
    if (foo(&task) == ZERO)
    {

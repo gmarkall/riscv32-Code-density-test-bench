@@ -102,11 +102,12 @@ unsigned int my_func(ST_1* st1_p)
    return res;
 }
 
-void main(int argc, char* argv[])
+int main(int __attribute__((unused)) argc, char* argv[])
 {
-   ST_1** var1_pp;
+   ST_1* var1_p;
+   ST_1** var1_pp = &var1_p;
    *var1_pp = (ST_1*)argv[0];
-   ST_1* st1_p = var1_pp[*argv[1]];
+   ST_1* st1_p = var1_pp[(int)*argv[1]];
 
    if (my_func(st1_p))
    {

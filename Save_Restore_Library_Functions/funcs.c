@@ -16,35 +16,8 @@
 
 
 
-void bar(unsigned int arg1, unsigned int arg2)
+
+void foo(const S_ABCD __attribute__((unused)) *  argAdd_p, const S_SEC_ARG __attribute__((unused)) * argCmnIn_p)
 {
 
-
-  S_SEC_ARG Input;
-  S_ABCD pAbcd = {0};
-
-  Input.aa = arg2;
-  pAbcd.a = arg1;
-
-  foo(&pAbcd, &Input);
 }
-
-
-
-
-int main(int argc, char** argv)
-{
-	unsigned int arg1;
-	unsigned int arg2;
-	arg1 = (unsigned int)argv[0] + 10;
-	arg2 = (unsigned int)argv[1] + 10;
-
-	bar(arg1, arg2);
-}
-
-
-void _start(int argc, char** argv)
-{
-	main(argc, argv);
-}
-

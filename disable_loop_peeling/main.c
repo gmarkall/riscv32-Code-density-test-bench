@@ -63,16 +63,14 @@ S_SECOND G_For_test;
 void *G_headerBuffers = (void*)TEST_DATA_BASE_ADDR;
 
 
-static void * f_TestUnroll(unsigned outer, unsigned inner);
+static void f_TestUnroll(unsigned outer, unsigned inner);
 
 
 //Main 
-void main(int argc, char** argv)
+int main(void)
 {
-  void * ptr;
-
-  ptr = f_TestUnroll(2, 4);
-  ptr = f_TestUnroll(3, 4);
+  f_TestUnroll(2, 4);
+  f_TestUnroll(3, 4);
   
 
   // checkpoint 1
@@ -81,17 +79,19 @@ void main(int argc, char** argv)
 
 }
 
-
+void _start(void)
+{
+  main();
+}
 
 __attribute__((noinline))
-static void * f_TestUnroll(unsigned outer, unsigned inner)
+static void f_TestUnroll(unsigned outer, unsigned inner)
 {
   U_32    index = 7;
   U_32    i;
   S_ENTRY *entry_p;
   U_08    *headers_p;
   U_32    k;
-  void    *returnPtr;
   
   headers_p = (U_08*)&G_headerBuffers;
 
@@ -109,8 +109,6 @@ static void * f_TestUnroll(unsigned outer, unsigned inner)
       entry_p->Array_p[k]->flag.one = 0;
     }
   }
-
-  return returnPtr;
 }
 
 

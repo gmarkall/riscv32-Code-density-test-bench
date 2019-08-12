@@ -47,7 +47,7 @@ void my_func(void)
   memset(&g_cb, 0, sizeof(g_cb));
 }
 
-void main(void)
+int main(void)
 {
    my_func();
 }

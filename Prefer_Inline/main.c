@@ -68,7 +68,7 @@ void my_func(unsigned int arg1)
   short_func(arg1, ADDRESS_18, 0); 
 }             
 
-void main(int argc, char* argv[])
+int main(int __attribute__((unused)) argc, char* argv[])
 {
    my_array = (unsigned int*)argv[0];
    my_func(*((unsigned int*)&argv[1]));
